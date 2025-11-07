@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/spyrosze-mcp-openfoodtox-badge.png)](https://mseep.ai/app/spyrosze-mcp-openfoodtox)
+
 # 🧪 MCP OpenFoodTox
 
 ## Accessing EFSA's Chemical Hazards Database using natural language
