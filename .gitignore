@@ -47,5 +47,4 @@ dmypy.json
 *.log
 
 # these are heavy files. db can be generated with setup_db.py
-data/
 /database/

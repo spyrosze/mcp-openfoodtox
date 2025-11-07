@@ -1,7 +1,3 @@
-import pandas as pd
-from src.mcp_openfoodtox.database.connection import get_connection
-from typing import Any
-import httpx
 from mcp.server.fastmcp import FastMCP
 from src.mcp_openfoodtox.tools.search_substance import search_substance
 from src.mcp_openfoodtox.tools.get_risk_assessments import get_risk_assessments

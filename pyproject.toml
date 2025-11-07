@@ -1,7 +1,7 @@
 [project]
 name = "mcp-openfoodtox"
 version = "0.1.0"
-description = "A Model Context Protocol (MCP) providing access to EFSA's comprehensive OpenFoodTox database containing 8,006 chemical substances, 45,582 alternative names, and 54,621 study records from 2,437 scientific assessments across 8 interconnected data tables with over 138,000 entries."
+description = "A Model Context Protocol (MCP) providing access to EFSA's comprehensive OpenFoodTox database containing 8,006 chemical substances across 8 interconnected data tables with over 138,000 entries."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -21,3 +21,8 @@ log_cli = true
 log_cli_level = "INFO"
 log_cli_format = "%(asctime)s [%(levelname)8s] %(name)s: %(message)s"
 log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12"

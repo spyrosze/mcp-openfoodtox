@@ -17,6 +17,21 @@ This OpenFoodTox MCP server uses the latest EFSA dataset (updated 14 September 2
 - **List Substances by Class and Safety** - Filter substances by category (food additive, pesticide, etc.) and safety criteria. Answers: "List all [category] substances" or "Show me carcinogenic food additives"
 - **List Substances by Assessment** - Find substances matching specific risk assessment criteria (ADI/TDI ranges, assessment types, population groups). Answers: "List substances with ADI > 5 mg/kg" or "Find substances assessed for children"
 
+## 🧾 Data Attribution
+
+This project uses data from EFSA OpenFoodTox, the European Food Safety Authority’s chemical hazards database.
+Data source:
+
+European Food Safety Authority (EFSA). OpenFoodTox – The EFSA Chemical Hazards Database. Zenodo, DOI: 10.5281/zenodo.8120114
+.
+© European Food Safety Authority. Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)
+.
+
+Official EFSA dataset page: https://www.efsa.europa.eu/en/data-report/chemical-hazards-database-openfoodtox
+
+Disclaimer:
+OpenFoodTox compiles toxicological reference values and hazard data extracted from EFSA’s scientific opinions.
+The dataset is provided for transparency and research purposes; for regulatory or legal use, always consult the original EFSA scientific outputs.
 
 ## 📋 Requirements
 
