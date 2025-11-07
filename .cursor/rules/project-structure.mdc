@@ -1,0 +1,111 @@
+---
+description: mcp-openfoodtox/
+├── .gitignore
+├── .python-version
+├── pyproject.toml
+├── uv.lock
+├── README.md
+├── AGENTS.md
+│
+├── src/
+│   └── mcp_openfoodtox/
+│       ├── __init__.py
+│       ├── server.py              # MCP server initialization
+│       ├── tools/
+│       │   ├── __init__.py
+│       │   ├── identify_substance.py
+│       │   ├── safety_assessment.py
+│       │   ├── toxicity_effects.py
+│       │   ├── safe_intake_limits.py
+│       │   ├── compare_substances.py
+│       │   └── list_substances.py
+│       ├── database/
+│       │   ├── __init__.py
+│       │   ├── connection.py      # DB connection management
+│       │   ├── queries.py         # Core SQL query functions
+│       │   └── search.py          # Substance search/disambiguation
+│       └── utils/
+│           ├── __init__.py
+│           ├── formatting.py      # Result formatting, citations
+│           └── validation.py      # Input validation
+│
+├── scripts/
+│   ├── setup_db.py                # Database initialization
+│   └── migrate.py                 # Future: DB migrations
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_tools/
+│   │   ├── __init__.py
+│   │   ├── test_identify_substance.py
+│   │   └── ... (other tool tests)
+│   ├── test_database/
+│   │   ├── __init__.py
+│   │   ├── test_queries.py
+│   │   └── test_search.py
+│   └── fixtures/
+│       └── test_data.db           # Small test database
+│
+├── data/
+│   ├── source/
+│   │   └── OpenFoodToxTX22809_2023.xlsx
+│   └── README.md                  # Data source info
+│
+├── database/
+│   ├── openfoodtox.db             # Generated SQLite DB (.gitignore)
+│   └── .gitkeep
+│
+└── docs/
+    ├── api.md                      # Tool API documentation
+    ├── database_schema.md          # Schema reference
+    └── examples.md                # Usage examples
+
+## Structure Rationale
+
+### src/mcp_openfoodtox/
+- Main package following Python packaging conventions
+- Contains all source code organized by functionality
+
+### tools/
+- One file per MCP tool for maintainability
+- Each tool imports database utilities and formats results
+
+### database/
+- connection.py: Handles SQLite connection pooling, context managers
+- queries.py: Core SQL query functions (reusable across tools)
+- search.py: Substance name matching, disambiguation logic
+
+### utils/
+- formatting.py: Standardizes tool responses, citation formatting
+- validation.py: Input sanitization, parameter validation
+
+### scripts/
+- setup_db.py: Database initialization (moved from root)
+- migrate.py: Future database schema migrations
+
+### tests/
+- Mirrors src/ structure for easy navigation
+- fixtures/ contains minimal test database
+
+### docs/
+- API documentation for each tool
+- Database schema reference
+- Usage examples
+
+## Migration Notes
+
+Current code locations:
+- main.py → Extract to database/queries.py and tools/
+- setup_db.py → Move to scripts/
+- Query logic → Refactor into database/queries.py
+- Tool implementations → Create in tools/ directory
+
+## Benefits
+
+- Clear separation of concerns
+- Easy to locate and modify code
+- Scalable for adding new tools
+- Follows Python packaging best practices
+- Testable structure
+alwaysApply: false
+---
